@@ -1,0 +1,14 @@
+[
+  {
+    "family": "Google",
+    "fonts": [
+      {
+        "asset": "fonts/Product-Sans-Regular.ttf"
+      },
+      {
+        "asset": "fonts/Product-Sans-Bold.ttf",
+        "weight": 700
+      }
+    ]
+  }
+]

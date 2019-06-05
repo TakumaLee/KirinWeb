@@ -7,11 +7,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'GDG',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'GDG Taiwan Flutter Project'),
     );
   }
 }
@@ -20,6 +21,7 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
+  final String labelFontFamily = 'Google';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,8 @@ class MyHomePage extends StatelessWidget {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title, style: TextStyle(color: Colors.blueAccent, fontFamily: labelFontFamily)),
+        backgroundColor: Color.fromARGB(1, 255, 255, 255),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -51,7 +54,8 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Hello, World!',
+                'Hello, Google World!',
+                style: TextStyle(color: Colors.blueAccent, fontFamily: labelFontFamily)
             ),
           ],
         ),
