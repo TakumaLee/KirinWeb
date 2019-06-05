@@ -8,6 +8,10 @@ environment:
 dependencies:
   flutter_web: any
   flutter_web_ui: any
+  firebase_core: ^0.4.0+3
+  firebase_analytics: ^3.0.2
+  firebase_crashlytics: ^0.0.4+4
+  firebase_storage: ^3.0.1
 
 dev_dependencies:
   build_runner: ^1.4.0
