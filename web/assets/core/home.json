@@ -1,18 +1,23 @@
 {
   "tabs": [
     {
+      "pageId": 0,
       "text": "Home"
     },
     {
+      "pageId": 1,
       "text": "Events"
     },
     {
+      "pageId": 2,
       "text": "Team"
     },
     {
+      "pageId": 3,
       "text": "About"
     },
     {
+      "pageId": 4,
       "text": "Contact"
     }
   ]

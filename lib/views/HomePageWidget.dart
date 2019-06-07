@@ -33,9 +33,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     });
   }
 
+  void _onButtonTap(int pageId) {
+    setState(() {
+      //TODO tap to change page.
+      print('_onButtonTap: Change page $pageId');
+    });
+  }
+
   Widget getWebScreen() {
     return Scaffold(
-      appBar: PreferredSize(child: HomeAppBar(title), preferredSize: Size.fromHeight(56)),
+      appBar: PreferredSize(child: HomeAppBar(_onButtonTap, title), preferredSize: Size.fromHeight(56)),
       body: ListView(
         children: <Widget>[
           Center(

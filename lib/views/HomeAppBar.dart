@@ -8,25 +8,27 @@ import 'TabButton.dart';
 
 class HomeAppBar extends StatefulWidget {
 
+  final void Function(int) _onPageButtonTap;
   final title;
 
-  HomeAppBar(this.title);
+  HomeAppBar(this._onPageButtonTap, this.title);
 
   @override
   _HomeAppBarWidgetState createState() {
-    return _HomeAppBarWidgetState(title);
+    return _HomeAppBarWidgetState(_onPageButtonTap, title);
   }
 
 }
 
 class _HomeAppBarWidgetState extends State<HomeAppBar> {
 
+  final void Function(int) _onPageButtonTap;
   final String labelFontFamily = 'Google';
   final title;
   var home;
   var tabs;
 
-  _HomeAppBarWidgetState(this.title);
+  _HomeAppBarWidgetState(this._onPageButtonTap, this.title);
 
   getFuture(BuildContext context) async {
     var data = await DefaultAssetBundle.of(context).loadString('core/home.json');
@@ -43,7 +45,8 @@ class _HomeAppBarWidgetState extends State<HomeAppBar> {
       if (tabs != null) {
         for (int i = 0; i < tabs.length; i++) {
           String text = tabs[i]['text'];
-          list.add(TabButton(title: text,));
+          int pageId = tabs[i]['pageId'];
+          list.add(TabButton(_onPageButtonTap, title: text, pageId: pageId));
         }
       }
     }

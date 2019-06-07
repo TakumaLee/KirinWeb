@@ -3,9 +3,11 @@ import 'package:flutter_web/widgets.dart';
 
 class TabButton extends StatelessWidget {
   final String title;
+  final int pageId;
   final String labelFontFamily = 'Google';
+  final void Function(int) _onPageButtonTap;
 
-  TabButton({Key key, this.title}) : super(key: key);
+  TabButton(this._onPageButtonTap, {Key key, this.title, this.pageId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class TabButton extends StatelessWidget {
       padding: EdgeInsets.all(12.0),
       child: InkWell(
           onTap: () {
-
+            _onPageButtonTap(pageId);
           },
           child: Container(
               width: 72,
