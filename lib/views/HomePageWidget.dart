@@ -15,6 +15,8 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
 
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   final String title;
   final String labelFontFamily = 'Google';
 
@@ -61,6 +63,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   Widget getAppScreen() {
     return Scaffold(
+      key: _scaffoldKey,
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -85,7 +88,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ],
         ),
       ),
-      appBar: PreferredSize(child: HomeAppBar(title), preferredSize: Size.fromHeight(56)),
+      appBar: AppBar(
+        title: Text(title, style: TextStyle(color: Colors.black54, fontFamily: labelFontFamily),),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            _scaffoldKey.currentState.openDrawer();
+          },
+        ),
+        iconTheme: IconThemeData(color: Colors.black54),
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: true,
+      ),
       body: ListView(
         children: <Widget>[
           Center(

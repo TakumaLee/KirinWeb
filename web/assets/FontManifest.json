@@ -10,5 +10,13 @@
         "weight": 700
       }
     ]
+  },
+  {
+    "family": "MaterialIcons",
+    "fonts": [
+      {
+        "asset": "fonts/MaterialIcons-Regular.ttf"
+      }
+    ]
   }
 ]
