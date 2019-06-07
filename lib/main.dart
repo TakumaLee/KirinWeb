@@ -1,4 +1,7 @@
 import 'package:flutter_web/material.dart';
+import 'dart:convert';
+import 'views/HomeAppBar.dart';
+import 'views/TabButton.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'GDG Taiwan Flutter Project'),
+      home: MyHomePage(title: 'GDG Taipei'),
     );
   }
 }
@@ -29,10 +32,7 @@ class MyHomePage extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: TextStyle(color: Colors.blueAccent, fontFamily: labelFontFamily)),
-        backgroundColor: Color.fromARGB(1, 255, 255, 255),
-      ),
+      appBar: PreferredSize(child: HomeAppBar(title), preferredSize: Size.fromHeight(50)),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
