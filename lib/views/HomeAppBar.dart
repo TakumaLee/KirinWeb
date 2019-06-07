@@ -58,10 +58,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth > 750) {
-          return AppBar(
+    return AppBar(
             leading: Container(
               child: Image.asset("images/logo-GDG.png"),
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 0.0, 0.0),
@@ -69,13 +66,6 @@ class _HomeAppBarWidgetState extends State<HomeAppBar> {
             title: Text(title, style: TextStyle(color: Colors.black54, fontFamily: labelFontFamily, fontStyle: FontStyle.normal)),
             backgroundColor: Color.fromARGB(1, 255, 255, 255),
             actions: getTabs(),
-          );
-        } else {
-          return Center(
-            child: Text("GDG"),
-          );
-        }
-      },
     );
   }
 
