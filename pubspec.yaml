@@ -16,6 +16,7 @@ flutter:
 dependencies:
   flutter_web: any
   flutter_web_ui: any
+  firebase: ^5.0.0
 #  flutter_svg: ^0.12.4+2
 #  firebase_core: ^0.4.0+3
 #  firebase_analytics: ^3.0.2
