@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter_web/material.dart';
 
-import 'TabButton.dart';
+import 'package:kirin_web/views/TabButton.dart';
 
 class HomeAppBar extends StatefulWidget {
 
@@ -55,12 +55,14 @@ class _HomeAppBarWidgetState extends State<HomeAppBar> {
 
   @override
   void initState() {
+    print("AppBar initState");
     getFuture(context);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    print("AppBar build");
     return AppBar(
             leading: Container(
               child: Image.asset("images/logo-GDG.png"),
