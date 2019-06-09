@@ -3,6 +3,7 @@ import 'package:flutter_web/material.dart';
 import 'package:kirin_web/views/MainAppBar.dart';
 
 import 'views/MainDrawer.dart';
+import 'views/page/home/HomePageContainer.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,28 +50,7 @@ class MyHomePage extends StatelessWidget {
   Widget getWebScreen() {
     return Scaffold(
       appBar: PreferredSize(child: HomeAppBar(_onButtonTap, title), preferredSize: Size.fromHeight(56)),
-      body: ListView(
-        children: <Widget>[
-          Center(
-            child: Text(
-              "Hello GDG World.",
-              style: TextStyle(fontFamily: labelFontFamily),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Hello GDG World.",
-              style: TextStyle(fontFamily: labelFontFamily),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Hello GDG World.",
-              style: TextStyle(fontFamily: labelFontFamily),
-            ),
-          ),
-        ],
-      ),
+      body: HomePageContainer(),
     );
   }
 
